@@ -1,0 +1,179 @@
+:root {
+  --dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  background: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 340px;
+  height: 520px;
+  background-color: var(--light-grayish-blue);
+  font-family: "Kumbh Sans", sans-serif;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgb(68, 42, 117);
+}
+
+ul li {
+  display: inline-block;
+  list-style-type: none;
+  position: relative;
+  right: 20px;
+  margin-top: 15px;
+  font-size: 13px;
+  color: var(--dark-blue);
+  margin-right: 30px;
+}
+
+hr {
+  margin-top: 15px;
+  position: relative;
+  right: 20px;
+  color: gray;
+}
+
+hr:nth-child(1) {
+  border: 0;
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.woman-pattern {
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.pattern {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.woman {
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  transform: translate(-56%);
+}
+
+.title {
+  margin-top: 140px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+}
+.arrow-down {
+  position: absolute;
+  right: 25px;
+  margin-top: 17px;
+}
+
+.more-about {
+  display: none;
+}
+
+.show {
+  display: block;
+  font-size: 12px;
+  color: var(--dark-grayish-blue);
+}
+
+.arrow-up {
+  transform: rotate(-180deg);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.box {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    width: 1000px;
+    height: 580px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  ul {
+    width: 500px;
+    padding-right: 100px;
+    margin-top: -20px;
+  }
+
+  ul li {
+    margin-top: 17px;
+    font-size: 15px;
+  }
+
+  hr {
+    margin-top: 17px;
+  }
+
+  .title {
+    padding-right: 395px;
+    margin-bottom: 40px;
+  }
+
+  .arrow-down {
+    margin-right: 100px;
+  }
+
+  .arrow-up {
+    margin-right: 100px;
+  }
+
+  .pattern {
+    position: absolute;
+    top: -220px;
+    left: -100px;
+  }
+
+  .woman {
+    position: absolute;
+    top: 110px;
+    left: 175px;
+  }
+
+  .show {
+    font-size: 14px;
+  }
+
+  .box {
+    display: block;
+    position: absolute;
+    top: 47%;
+    left: 6.5%;
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .box {
+    display: none;
+  }
+} ;
