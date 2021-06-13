@@ -103,12 +103,12 @@ p {
   padding-right: 30px;
 }
 
-.arrow-up {
-  transform: rotate(-180deg);
-}
-
 .bold {
   font-weight: 700;
+}
+
+.arrow-up {
+  transform: rotate(-180deg);
 }
 
 /* Responsiveness */
