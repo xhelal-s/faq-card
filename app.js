@@ -1,13 +1,13 @@
-"use stric";
+"use strict";
 
-const specialArrow = document.querySelector(".special");
-const moreAbout = document.querySelector(".more-about");
-const specialText = document.querySelector(".special-text");
+const question = document.querySelectorAll(".question");
+const answer = document.querySelectorAll(".answer");
+const arrowDown = document.querySelectorAll(".arrow-down");
 
-function arrowToggle() {
-  moreAbout.classList.toggle("show");
-  specialArrow.classList.toggle("arrow-up");
-  specialText.classList.toggle("bold");
+for (let i = 0; i < arrowDown.length; i++) {
+  arrowDown[i].addEventListener("click", function () {
+    answer[i].classList.toggle("show");
+    arrowDown[i].classList.toggle("arrow-up");
+    question[i].classList.toggle("bold");
+  });
 }
-
-specialArrow.addEventListener("click", arrowToggle);
