@@ -81,6 +81,10 @@ p {
   display: none;
 }
 
+.box-image {
+  display: none;
+}
+
 .answer {
   display: none;
 }
@@ -88,6 +92,7 @@ p {
 .question {
   display: inline-block;
   margin-right: 20px;
+  cursor: pointer;
 }
 .arrow-down {
   display: inline-block;
@@ -120,6 +125,11 @@ p {
 }
 
 @media only screen and (min-width: 1000px) {
+  .box {
+    display: flex;
+    overflow: hidden;
+  }
+
   .mobile-images {
     display: none;
   }
@@ -141,9 +151,12 @@ p {
     left: -105px;
   }
 
-  .box {
-    display: flex;
-    overflow: hidden;
+  .box-image {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 70px;
+    z-index: 4;
   }
 
   .faq {
@@ -152,35 +165,21 @@ p {
 
   .faq-container {
     position: relative;
-    left: 520px;
-    width: 430px;
     margin-top: 90px;
+    width: 400px;
+    left: 550px;
     margin-bottom: 90px;
   }
 
   .arrow-down {
     position: absolute;
     right: 5px;
-  }
-
-  .faq-container::before {
-    content: "";
-    position: absolute;
-    top: 180px;
-    left: -148%;
-    width: 155px;
-    height: 155px;
-    background-image: url(images/illustration-box-desktop.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 3;
-  }
-
-  .box .faq-container::before {
-    overflow: visible;
+    width: 13px;
+    height: auto;
   }
 
   .question:hover {
     color: var(--soft-red);
   }
 }
+
