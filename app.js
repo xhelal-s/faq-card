@@ -10,4 +10,11 @@ for (let i = 0; i < arrowDown.length; i++) {
     arrowDown[i].classList.toggle("arrow-up");
     question[i].classList.toggle("bold");
   });
+
+  question[i].addEventListener("click", function () {
+    answer[i].classList.toggle("show");
+    arrowDown[i].classList.toggle("arrow-up");
+    question[i].classList.toggle("bold");
+  });
 }
+
