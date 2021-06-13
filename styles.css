@@ -8,95 +8,99 @@
   --light-grayish-blue: hsl(240, 5%, 91%);
 }
 
-* {
+/* General styling */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   font-size: 12px;
   background: linear-gradient(var(--soft-violet), var(--soft-blue));
+  font-family: "Kumbh Sans", sans-serif;
 }
 
-.center {
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  text-align: center;
+}
+
+p {
+  font-size: 15px;
+  color: var(--dark-blue);
+}
+
+.faq-container hr {
+  border: 0;
+  border-top: 1px solid var(--light-grayish-blue);
+}
+/* Layout */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.container {
+.box {
   position: relative;
-  width: 340px;
-  height: 520px;
-  background-color: var(--light-grayish-blue);
-  font-family: "Kumbh Sans", sans-serif;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgb(68, 42, 117);
+  width: 90%;
+  max-width: 1100px;
+  background-color: #fff;
+  padding: 0 20px 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgb(104, 76, 158);
 }
 
-ul li {
-  display: inline-block;
-  list-style-type: none;
+.mobile-images {
   position: relative;
-  right: 20px;
-  margin-top: 15px;
-  font-size: 13px;
-  color: var(--dark-blue);
-  margin-right: 30px;
 }
 
-hr {
-  margin-top: 15px;
-  position: relative;
-  right: 20px;
-  color: gray;
-}
-
-hr:nth-child(1) {
-  border: 0;
-  border-top: 1px solid rgb(255, 255, 255);
-}
-
-.woman-pattern {
-  position: relative;
-  width: 100%;
-  margin-bottom: 100px;
-}
-
-.pattern {
+.mobile-pattern {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
 }
-.woman {
+
+.mobile-woman {
   position: absolute;
   top: -110px;
-  left: 50%;
-  transform: translate(-56%);
+  left: 47.5%;
+  transform: translate(-52.5%);
 }
 
-.title {
-  margin-top: 140px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 2rem;
-  color: var(--dark-blue);
-  margin-bottom: 30px;
+.faq-container {
+  margin-top: 130px;
+}
+
+/* Details */
+.desktop-images {
+  display: none;
+}
+
+.answer {
+  display: none;
+}
+
+.question {
+  display: inline-block;
+  margin-right: 20px;
 }
 .arrow-down {
+  display: inline-block;
   position: absolute;
   right: 25px;
   margin-top: 17px;
 }
 
-.more-about {
-  display: none;
-}
-
 .show {
   display: block;
-  font-size: 12px;
-  color: var(--dark-grayish-blue);
+  font-size: 13px;
+  margin-top: 0;
+  padding-right: 30px;
 }
 
 .arrow-up {
@@ -107,73 +111,76 @@ hr:nth-child(1) {
   font-weight: 700;
 }
 
-.box {
-  display: none;
+/* Responsiveness */
+@media only screen and (min-width: 700px) {
+  .mobile-woman {
+    left: 48.5%;
+    transform: translate(-51.5%);
+  }
 }
 
-@media only screen and (min-width: 1440px) {
-  .container {
-    width: 1000px;
-    height: 580px;
+@media only screen and (min-width: 1000px) {
+  .mobile-images {
+    display: none;
+  }
+
+  .desktop-images {
+    display: block;
+    position: relative;
+  }
+
+  .desktop-pattern {
+    position: absolute;
+    top: -240px;
+    left: -600px;
+  }
+
+  .desktop-woman {
+    position: absolute;
+    top: 80px;
+    left: -105px;
+  }
+
+  .box {
     display: flex;
     overflow: hidden;
   }
 
-  ul {
-    width: 500px;
-    padding-right: 100px;
-    margin-top: -20px;
+  .faq {
+    text-align: left;
   }
 
-  ul li {
-    margin-top: 17px;
-    font-size: 15px;
-  }
-
-  hr {
-    margin-top: 17px;
-  }
-
-  .title {
-    padding-right: 395px;
-    margin-bottom: 40px;
+  .faq-container {
+    position: relative;
+    left: 520px;
+    width: 430px;
+    margin-top: 90px;
+    margin-bottom: 90px;
   }
 
   .arrow-down {
-    margin-right: 100px;
-  }
-
-  .arrow-up {
-    margin-right: 100px;
-  }
-
-  .pattern {
     position: absolute;
-    top: -220px;
-    left: -100px;
+    right: 5px;
   }
 
-  .woman {
+  .faq-container::before {
+    content: "";
     position: absolute;
-    top: 110px;
-    left: 175px;
+    top: 180px;
+    left: -148%;
+    width: 155px;
+    height: 155px;
+    background-image: url(images/illustration-box-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
   }
 
-  .show {
-    font-size: 14px;
+  .box .faq-container::before {
+    overflow: visible;
   }
 
-  .box {
-    display: block;
-    position: absolute;
-    top: 47%;
-    left: 6.5%;
-    z-index: 1;
+  .question:hover {
+    color: var(--soft-red);
   }
 }
-
-@media only screen and (min-width: 1500px) {
-  .box {
-    display: none;
-  }
-} ;
